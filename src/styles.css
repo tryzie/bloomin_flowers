@@ -157,7 +157,7 @@ select:focus, input:focus, textarea:focus { border-color: var(--rose); outline: 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
 .product { display: flex; flex-direction: column; }
 .product-art {
-  position: relative; aspect-ratio: 4 / 5; border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 4px;
+  position: relative; aspect-ratio: 1 / 1; border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 4px;
   background: var(--blush-2); display: grid; place-items: center; overflow: hidden; padding: 12%;
 }
 .product:nth-child(3n + 2) .product-art { background: #F3E3E0; }

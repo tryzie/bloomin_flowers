@@ -27,7 +27,7 @@ export default function Hero() {
         </div>
         <div className="hero-art">
           <div className="oval">
-            <img src="./images/red-white-grandeur.jpg" alt="Bouquet of red and white roses with baby’s breath" />
+            <img src="./images/red-velvet-cloud.jpg" alt="Red roses with a ring of baby’s breath in blush wrap" />
           </div>
         </div>
       </div>

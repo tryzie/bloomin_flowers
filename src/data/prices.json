@@ -1,0 +1,261 @@
+{
+  "_instructions": "Edit prices here (KSh, whole numbers, no commas). You may rename items via \"name\". Do not change \"id\". Delivery fee 0 = Free. sameDay true or false. To add a delivery area, copy a line. A new bouquet also needs a photo and details in products.ts.",
+  "bouquets": [
+    {
+      "id": "red-velvet-cloud",
+      "name": "Red Velvet Cloud",
+      "price": 5000
+    },
+    {
+      "id": "butterfly-kisses",
+      "name": "Butterfly Kisses",
+      "price": 6000
+    },
+    {
+      "id": "lilac-money",
+      "name": "Lilac Money Bouquet",
+      "price": 3000
+    },
+    {
+      "id": "classic-reds",
+      "name": "Classic Reds",
+      "price": 3500
+    },
+    {
+      "id": "black-tie-reds",
+      "name": "Black Tie Reds",
+      "price": 4000
+    },
+    {
+      "id": "midnight-garden",
+      "name": "Midnight Garden",
+      "price": 3000
+    },
+    {
+      "id": "snow-halo",
+      "name": "Snow Halo",
+      "price": 2500
+    },
+    {
+      "id": "ribbon-of-love",
+      "name": "Ribbon of Love",
+      "price": 3000
+    },
+    {
+      "id": "mixed-blush",
+      "name": "Mixed Blush",
+      "price": 2000
+    },
+    {
+      "id": "roses-and-wine",
+      "name": "Roses & Wine",
+      "price": 3500
+    },
+    {
+      "id": "sunset-orange",
+      "name": "Sunset Orange",
+      "price": 2600
+    },
+    {
+      "id": "pink-petite",
+      "name": "Pink Petite",
+      "price": 3000
+    },
+    {
+      "id": "velvet-dozen",
+      "name": "Velvet Dozen",
+      "price": 1500
+    },
+    {
+      "id": "lavender-dreams",
+      "name": "Lavender Dreams",
+      "price": 2500
+    },
+    {
+      "id": "garden-party",
+      "name": "Garden Party",
+      "price": 3500
+    },
+    {
+      "id": "sweet-pink",
+      "name": "Sweet Pink",
+      "price": 3000
+    },
+    {
+      "id": "get-well-lilies",
+      "name": "Get Well Lilies",
+      "price": 3500
+    },
+    {
+      "id": "flame-lilies",
+      "name": "Flame Lilies",
+      "price": 4000
+    },
+    {
+      "id": "graduation-gold",
+      "name": "Graduation Gold",
+      "price": 3000
+    },
+    {
+      "id": "chocolate-cash",
+      "name": "Chocolate & Cash",
+      "price": 3000
+    },
+    {
+      "id": "kinder-treats",
+      "name": "Kinder Treats",
+      "price": 3000
+    },
+    {
+      "id": "gentlemans-gift",
+      "name": "Gentleman’s Gift",
+      "price": 5000
+    }
+  ],
+  "addOns": [
+    {
+      "id": "cake",
+      "name": "Cake",
+      "price": 1800
+    },
+    {
+      "id": "chocs",
+      "name": "Box of chocolates",
+      "price": 2300
+    },
+    {
+      "id": "teddy",
+      "name": "Teddy bear",
+      "price": 6500
+    },
+    {
+      "id": "wine",
+      "name": "Bottle of wine",
+      "price": 1200
+    },
+    {
+      "id": "ribbon",
+      "name": "Personalised ribbon",
+      "price": 250
+    }
+  ],
+  "deliveryAreas": [
+    {
+      "area": "CBD",
+      "fee": 0,
+      "sameDay": true
+    },
+    {
+      "area": "Upper Hill",
+      "fee": 300,
+      "sameDay": true
+    },
+    {
+      "area": "Ngara / Pangani",
+      "fee": 350,
+      "sameDay": true
+    },
+    {
+      "area": "Parklands",
+      "fee": 300,
+      "sameDay": true
+    },
+    {
+      "area": "Westlands",
+      "fee": 300,
+      "sameDay": true
+    },
+    {
+      "area": "Kilimani",
+      "fee": 300,
+      "sameDay": true
+    },
+    {
+      "area": "Hurlingham",
+      "fee": 300,
+      "sameDay": true
+    },
+    {
+      "area": "Lavington",
+      "fee": 350,
+      "sameDay": true
+    },
+    {
+      "area": "Kileleshwa",
+      "fee": 350,
+      "sameDay": true
+    },
+    {
+      "area": "South B / South C",
+      "fee": 350,
+      "sameDay": true
+    },
+    {
+      "area": "Langata",
+      "fee": 450,
+      "sameDay": true
+    },
+    {
+      "area": "Gigiri / UN",
+      "fee": 450,
+      "sameDay": true
+    },
+    {
+      "area": "Kasarani / Roysambu",
+      "fee": 450,
+      "sameDay": true
+    },
+    {
+      "area": "Embakasi / JKIA",
+      "fee": 500,
+      "sameDay": true
+    },
+    {
+      "area": "Runda",
+      "fee": 500,
+      "sameDay": true
+    },
+    {
+      "area": "Ruaka",
+      "fee": 500,
+      "sameDay": true
+    },
+    {
+      "area": "Karen",
+      "fee": 550,
+      "sameDay": true
+    },
+    {
+      "area": "Kitengela",
+      "fee": 1000,
+      "sameDay": false
+    },
+    {
+      "area": "Ngong / Rongai",
+      "fee": 1500,
+      "sameDay": false
+    },
+    {
+      "area": "Thika Road (beyond Ruiru)",
+      "fee": 900,
+      "sameDay": false
+    }
+  ],
+  "subscriptions": [
+    {
+      "plan": "Home",
+      "price": 3500,
+      "every": "week"
+    },
+    {
+      "plan": "Office reception",
+      "price": 6000,
+      "every": "week"
+    },
+    {
+      "plan": "Monthly treat",
+      "price": 3500,
+      "every": "month"
+    }
+  ]
+}

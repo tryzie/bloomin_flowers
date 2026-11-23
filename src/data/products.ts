@@ -1,3 +1,5 @@
+import prices from './prices.json';
+
 export type Occasion = 'Love' | 'Birthday' | 'Graduation' | 'Get well' | 'Money & treats' | 'For him' | 'Just because';
 
 export interface Product {
@@ -15,13 +17,12 @@ export interface Product {
 
 export const OCCASIONS: Occasion[] = ['Love', 'Birthday', 'Graduation', 'Get well', 'Money & treats', 'For him', 'Just because'];
 
-// Prices and stem counts are placeholders. Confirm them with the shop.
-export const PRODUCTS: Product[] = [
+// Bouquet details and photos. Prices and names live in prices.json.
+const DETAILS: Omit<Product, 'price'>[] = [
   {
     id: 'red-velvet-cloud',
     name: 'Red Velvet Cloud',
     description: 'Deep red roses framed by a full ring of baby’s breath, in blush wrap. Add a ribbon with your own words.',
-    price: 9500,
     occasions: ['Love', 'Birthday'],
     stems: 'About 100 roses',
     colors: ['#A81B31'],
@@ -32,7 +33,6 @@ export const PRODUCTS: Product[] = [
     id: 'butterfly-kisses',
     name: 'Butterfly Kisses',
     description: 'A heart of pink roses inside a sea of red, finished with gold butterflies and a name ribbon.',
-    price: 12000,
     occasions: ['Birthday', 'Love'],
     stems: 'About 150 roses',
     colors: ['#C8243C', '#F4A6B8'],
@@ -43,7 +43,6 @@ export const PRODUCTS: Product[] = [
     id: 'lilac-money',
     name: 'Lilac Money Bouquet',
     description: 'Lilac roses mixed with folded banknotes in purple wrap. Tell us the cash amount and we build it in.',
-    price: 4500,
     occasions: ['Money & treats', 'Birthday', 'Graduation'],
     stems: 'Roses + your cash amount',
     colors: ['#C9A0C8'],
@@ -54,7 +53,6 @@ export const PRODUCTS: Product[] = [
     id: 'classic-reds',
     name: 'Classic Reds',
     description: 'Fifty dark red roses in crisp white wrap. Simple, bold, always right.',
-    price: 5500,
     occasions: ['Love', 'Just because'],
     stems: '50 roses',
     colors: ['#A81B31'],
@@ -65,7 +63,6 @@ export const PRODUCTS: Product[] = [
     id: 'black-tie-reds',
     name: 'Black Tie Reds',
     description: 'A grand dome of red roses in black wrap with a satin ribbon carrying your message.',
-    price: 9000,
     occasions: ['Love', 'Birthday'],
     stems: 'About 100 roses',
     colors: ['#C8243C'],
@@ -75,7 +72,6 @@ export const PRODUCTS: Product[] = [
     id: 'midnight-garden',
     name: 'Midnight Garden',
     description: 'Dark burgundy roses, a baby’s breath border and black wrap. Comes with a personalised ribbon.',
-    price: 9000,
     occasions: ['Birthday', 'Love'],
     stems: 'About 100 roses',
     colors: ['#7A1028'],
@@ -85,7 +81,6 @@ export const PRODUCTS: Product[] = [
     id: 'snow-halo',
     name: 'Snow Halo',
     description: 'Red roses wrapped in a thick halo of baby’s breath and white paper. Lovely for congratulations.',
-    price: 7500,
     occasions: ['Graduation', 'Love'],
     stems: 'About 60 roses',
     colors: ['#A81B31', '#FFFFFF'],
@@ -95,7 +90,6 @@ export const PRODUCTS: Product[] = [
     id: 'ribbon-of-love',
     name: 'Ribbon of Love',
     description: 'Bright red roses in white and black wrap, finished with a red ribbon in your words.',
-    price: 7000,
     occasions: ['Love'],
     stems: 'About 80 roses',
     colors: ['#D9384F'],
@@ -105,7 +99,6 @@ export const PRODUCTS: Product[] = [
     id: 'mixed-blush',
     name: 'Mixed Blush',
     description: 'Red, peach and cream roses with baby’s breath, in patterned white wrap.',
-    price: 7000,
     occasions: ['Birthday', 'Just because'],
     stems: 'About 70 roses',
     colors: ['#A81B31', '#F4B6A0', '#FFF6E0'],
@@ -115,7 +108,6 @@ export const PRODUCTS: Product[] = [
     id: 'roses-and-wine',
     name: 'Roses & Wine',
     description: 'Pink and red roses with baby’s breath in black wrap, delivered with a bottle of wine.',
-    price: 8500,
     occasions: ['Love', 'Birthday'],
     stems: 'About 70 roses + wine',
     colors: ['#E0457B'],
@@ -125,7 +117,6 @@ export const PRODUCTS: Product[] = [
     id: 'sunset-orange',
     name: 'Sunset Orange',
     description: 'Orange roses ringed with baby’s breath in white marble wrap. Warm, cheerful and bright.',
-    price: 6000,
     occasions: ['Birthday', 'Just because'],
     stems: 'About 60 roses',
     colors: ['#E8822F'],
@@ -135,7 +126,6 @@ export const PRODUCTS: Product[] = [
     id: 'pink-petite',
     name: 'Pink Petite',
     description: 'A neat, round bouquet of pink roses with a black ribbon.',
-    price: 4500,
     occasions: ['Love', 'Birthday', 'Just because'],
     stems: 'About 50 roses',
     colors: ['#EE8FA6'],
@@ -145,7 +135,6 @@ export const PRODUCTS: Product[] = [
     id: 'velvet-dozen',
     name: 'Velvet Dozen',
     description: 'Large-headed red roses in black lace-pattern wrap.',
-    price: 3500,
     occasions: ['Love', 'Just because'],
     stems: '24 roses',
     colors: ['#C8243C'],
@@ -155,7 +144,6 @@ export const PRODUCTS: Product[] = [
     id: 'lavender-dreams',
     name: 'Lavender Dreams',
     description: 'Pink roses and purple asters in lilac wrap. Soft, full and pretty.',
-    price: 5000,
     occasions: ['Birthday', 'Just because'],
     stems: 'About 40 stems',
     colors: ['#9C82C8', '#F4A6B8'],
@@ -165,7 +153,6 @@ export const PRODUCTS: Product[] = [
     id: 'garden-party',
     name: 'Garden Party',
     description: 'White chrysanthemums, purple carnations and pink roses in white wrap.',
-    price: 5500,
     occasions: ['Birthday', 'Get well', 'Just because'],
     stems: 'About 45 stems',
     colors: ['#FFFFFF', '#8E2A6A', '#E0457B'],
@@ -175,7 +162,6 @@ export const PRODUCTS: Product[] = [
     id: 'sweet-pink',
     name: 'Sweet Pink',
     description: 'Pink roses and white chrysanthemums with a pink ribbon in your words.',
-    price: 5000,
     occasions: ['Birthday', 'Love'],
     stems: 'About 40 stems',
     colors: ['#EE8FA6', '#FFFFFF'],
@@ -185,7 +171,6 @@ export const PRODUCTS: Product[] = [
     id: 'get-well-lilies',
     name: 'Get Well Lilies',
     description: 'Lilies, pink roses and chrysanthemums with a “Get Well Soon” ribbon.',
-    price: 5500,
     occasions: ['Get well'],
     stems: 'About 35 stems',
     colors: ['#FFFFFF', '#EE8FA6'],
@@ -195,7 +180,6 @@ export const PRODUCTS: Product[] = [
     id: 'flame-lilies',
     name: 'Flame Lilies',
     description: 'Red roses and lilies in bold orange wrap. Big colour for a big day.',
-    price: 4500,
     occasions: ['Birthday', 'Get well'],
     stems: 'About 30 stems',
     colors: ['#C8243C', '#E8822F'],
@@ -205,7 +189,6 @@ export const PRODUCTS: Product[] = [
     id: 'graduation-gold',
     name: 'Graduation Gold',
     description: 'Yellow and red roses with white chrysanthemums, a mini graduation cap and a congratulations ribbon.',
-    price: 6000,
     occasions: ['Graduation'],
     stems: 'About 50 stems',
     colors: ['#F5C443', '#A81B31', '#FFFFFF'],
@@ -215,7 +198,6 @@ export const PRODUCTS: Product[] = [
     id: 'chocolate-cash',
     name: 'Chocolate & Cash',
     description: 'Pink roses, Cadbury and Galaxy chocolates and a fan of banknotes in pink wrap.',
-    price: 5500,
     occasions: ['Money & treats', 'Birthday'],
     stems: 'Roses, chocolates + your cash amount',
     colors: ['#F4A6B8'],
@@ -225,7 +207,6 @@ export const PRODUCTS: Product[] = [
     id: 'kinder-treats',
     name: 'Kinder Treats',
     description: 'Kinder Joy, crisps and chocolates with blue baby’s breath and banknotes. A favourite for kids and teens.',
-    price: 4000,
     occasions: ['Money & treats', 'Birthday'],
     stems: 'Treats + your cash amount',
     colors: ['#9EC9E8'],
@@ -235,7 +216,6 @@ export const PRODUCTS: Product[] = [
     id: 'gentlemans-gift',
     name: 'Gentleman’s Gift',
     description: 'A gift bouquet for him: a T-shirt, socks and accessories arranged with baby’s breath. Tell us his size.',
-    price: 6500,
     occasions: ['For him', 'Birthday'],
     stems: 'Clothing gift bouquet',
     colors: ['#2B1F24'],
@@ -243,16 +223,18 @@ export const PRODUCTS: Product[] = [
   },
 ];
 
+const bouquetPrices = new Map(prices.bouquets.map((b) => [b.id, b]));
+
+// Name and price come from prices.json. Bouquets without a price entry are not shown.
+export const PRODUCTS: Product[] = DETAILS.flatMap((d) => {
+  const entry = bouquetPrices.get(d.id);
+  return entry ? [{ ...d, name: entry.name, price: entry.price }] : [];
+});
+
 export interface AddOn {
   id: string;
   name: string;
   price: number;
 }
 
-export const ADD_ONS: AddOn[] = [
-  { id: 'cake', name: 'Cake', price: 1800 },
-  { id: 'chocs', name: 'Box of chocolates', price: 1200 },
-  { id: 'teddy', name: 'Teddy bear', price: 1500 },
-  { id: 'wine', name: 'Bottle of wine', price: 2500 },
-  { id: 'ribbon', name: 'Personalised ribbon', price: 500 },
-];
+export const ADD_ONS: AddOn[] = prices.addOns;

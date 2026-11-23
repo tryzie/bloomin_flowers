@@ -1,11 +1,15 @@
 import { SHOP } from '../config';
 import { ksh } from '../data/zones';
+import prices from '../data/prices.json';
 
-const PLANS = [
-  { name: 'Home', price: 2500, every: 'week', detail: 'A fresh seasonal hand-tie every Friday, ready for the weekend.' },
-  { name: 'Office reception', price: 9000, every: 'week', detail: 'A tall arrangement, vase included. We swap it every Monday morning.' },
-  { name: 'Monthly treat', price: 3200, every: 'month', detail: 'One surprise bouquet a month for someone you love, on a date you choose.' },
-];
+const DETAILS: Record<string, string> = {
+  Home: 'A fresh seasonal hand-tie every Friday, ready for the weekend.',
+  'Office reception': 'A tall arrangement, vase included. We swap it every Monday morning.',
+  'Monthly treat': 'One surprise bouquet a month for someone you love, on a date you choose.',
+};
+
+// Plan prices come from prices.json.
+const PLANS = prices.subscriptions.map((s) => ({ name: s.plan, price: s.price, every: s.every, detail: DETAILS[s.plan] ?? '' }));
 
 export default function Subscriptions() {
   const ask = (plan: string) =>

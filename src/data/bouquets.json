@@ -1,0 +1,470 @@
+{
+  "_instructions": [
+    "Each block is one bouquet on the website, shown in this order (bestsellers first).",
+    "To ADD a bouquet: upload its photo into the photos folder on GitHub, then copy a block below, give it a new id (lowercase-with-dashes) and set \"photo\" to the photo's file name, e.g. \"photo\": \"IMG_3001.jpeg\". The website crops it square automatically.",
+    "If the automatic crop cuts the flowers, add \"focus\": \"top\", \"bottom\", \"left\", \"right\" or \"center\".",
+    "To REMOVE a bouquet: delete its whole block.",
+    "price: whole KSh, no commas. occasions: names from the occasions list. Add \"bestseller\": true to show the Bestseller badge.",
+    "Every block except the last needs a comma after its closing }."
+  ],
+  "occasions": [
+    "Love",
+    "Birthday",
+    "Graduation",
+    "Get well",
+    "Money & treats",
+    "For him",
+    "Just because"
+  ],
+  "bouquets": [
+    {
+      "id": "red-velvet-cloud",
+      "name": "Red Velvet Cloud",
+      "price": 5000,
+      "description": "Deep red roses framed by a full ring of baby’s breath, in blush wrap. Add a ribbon with your own words.",
+      "occasions": [
+        "Love",
+        "Birthday"
+      ],
+      "size": "About 100 roses",
+      "bestseller": true
+    },
+    {
+      "id": "butterfly-kisses",
+      "name": "Butterfly Kisses",
+      "price": 6000,
+      "description": "A heart of pink roses inside a sea of red, finished with gold butterflies and a name ribbon.",
+      "occasions": [
+        "Birthday",
+        "Love"
+      ],
+      "size": "About 150 roses",
+      "bestseller": true
+    },
+    {
+      "id": "lilac-money",
+      "name": "Lilac Money Bouquet",
+      "price": 3000,
+      "description": "Lilac roses mixed with folded banknotes in purple wrap. Tell us the cash amount and we build it in.",
+      "occasions": [
+        "Money & treats",
+        "Birthday",
+        "Graduation"
+      ],
+      "size": "Roses + your cash amount",
+      "bestseller": true
+    },
+    {
+      "id": "classic-reds",
+      "name": "Classic Reds",
+      "price": 3500,
+      "description": "Fifty dark red roses in crisp white wrap. Simple, bold, always right.",
+      "occasions": [
+        "Love",
+        "Just because"
+      ],
+      "size": "50 roses",
+      "bestseller": true
+    },
+    {
+      "id": "black-tie-reds",
+      "name": "Black Tie Reds",
+      "price": 4000,
+      "description": "A grand dome of red roses in black wrap with a satin ribbon carrying your message.",
+      "occasions": [
+        "Love",
+        "Birthday"
+      ],
+      "size": "About 100 roses"
+    },
+    {
+      "id": "midnight-garden",
+      "name": "Midnight Garden",
+      "price": 3000,
+      "description": "Dark burgundy roses, a baby’s breath border and black wrap. Comes with a personalised ribbon.",
+      "occasions": [
+        "Birthday",
+        "Love"
+      ],
+      "size": "About 100 roses"
+    },
+    {
+      "id": "snow-halo",
+      "name": "Snow Halo",
+      "price": 2500,
+      "description": "Red roses wrapped in a thick halo of baby’s breath and white paper. Lovely for congratulations.",
+      "occasions": [
+        "Graduation",
+        "Love"
+      ],
+      "size": "About 60 roses"
+    },
+    {
+      "id": "ribbon-of-love",
+      "name": "Ribbon of Love",
+      "price": 3000,
+      "description": "Bright red roses in white and black wrap, finished with a red ribbon in your words.",
+      "occasions": [
+        "Love"
+      ],
+      "size": "About 80 roses"
+    },
+    {
+      "id": "mixed-blush",
+      "name": "Mixed Blush",
+      "price": 2000,
+      "description": "Red, peach and cream roses with baby’s breath, in patterned white wrap.",
+      "occasions": [
+        "Birthday",
+        "Just because"
+      ],
+      "size": "About 70 roses"
+    },
+    {
+      "id": "roses-and-wine",
+      "name": "Roses & Wine",
+      "price": 3500,
+      "description": "Pink and red roses with baby’s breath in black wrap, delivered with a bottle of wine.",
+      "occasions": [
+        "Love",
+        "Birthday"
+      ],
+      "size": "About 70 roses + wine"
+    },
+    {
+      "id": "sunset-orange",
+      "name": "Sunset Orange",
+      "price": 2600,
+      "description": "Orange roses ringed with baby’s breath in white marble wrap. Warm, cheerful and bright.",
+      "occasions": [
+        "Birthday",
+        "Just because"
+      ],
+      "size": "About 60 roses"
+    },
+    {
+      "id": "pink-petite",
+      "name": "Pink Petite",
+      "price": 3000,
+      "description": "A neat, round bouquet of pink roses with a black ribbon.",
+      "occasions": [
+        "Love",
+        "Birthday",
+        "Just because"
+      ],
+      "size": "About 50 roses"
+    },
+    {
+      "id": "velvet-dozen",
+      "name": "Velvet Dozen",
+      "price": 1500,
+      "description": "Large-headed red roses in black lace-pattern wrap.",
+      "occasions": [
+        "Love",
+        "Just because"
+      ],
+      "size": "24 roses"
+    },
+    {
+      "id": "lavender-dreams",
+      "name": "Lavender Dreams",
+      "price": 2500,
+      "description": "Pink roses and purple asters in lilac wrap. Soft, full and pretty.",
+      "occasions": [
+        "Birthday",
+        "Just because"
+      ],
+      "size": "About 40 stems"
+    },
+    {
+      "id": "garden-party",
+      "name": "Garden Party",
+      "price": 3500,
+      "description": "White chrysanthemums, purple carnations and pink roses in white wrap.",
+      "occasions": [
+        "Birthday",
+        "Get well",
+        "Just because"
+      ],
+      "size": "About 45 stems"
+    },
+    {
+      "id": "sweet-pink",
+      "name": "Sweet Pink",
+      "price": 3000,
+      "description": "Pink roses and white chrysanthemums with a pink ribbon in your words.",
+      "occasions": [
+        "Birthday",
+        "Love"
+      ],
+      "size": "About 40 stems"
+    },
+    {
+      "id": "get-well-lilies",
+      "name": "Get Well Lilies",
+      "price": 3500,
+      "description": "Lilies, pink roses and chrysanthemums with a “Get Well Soon” ribbon.",
+      "occasions": [
+        "Get well"
+      ],
+      "size": "About 35 stems"
+    },
+    {
+      "id": "flame-lilies",
+      "name": "Flame Lilies",
+      "price": 4000,
+      "description": "Red roses and lilies in bold orange wrap. Big colour for a big day.",
+      "occasions": [
+        "Birthday",
+        "Get well"
+      ],
+      "size": "About 30 stems"
+    },
+    {
+      "id": "graduation-gold",
+      "name": "Graduation Gold",
+      "price": 3000,
+      "description": "Yellow and red roses with white chrysanthemums, a mini graduation cap and a congratulations ribbon.",
+      "occasions": [
+        "Graduation"
+      ],
+      "size": "About 50 stems"
+    },
+    {
+      "id": "chocolate-cash",
+      "name": "Chocolate & Cash",
+      "price": 3000,
+      "description": "Pink roses, Cadbury and Galaxy chocolates and a fan of banknotes in pink wrap.",
+      "occasions": [
+        "Money & treats",
+        "Birthday"
+      ],
+      "size": "Roses, chocolates + your cash amount"
+    },
+    {
+      "id": "kinder-treats",
+      "name": "Kinder Treats",
+      "price": 3000,
+      "description": "Kinder Joy, crisps and chocolates with blue baby’s breath and banknotes. A favourite for kids and teens.",
+      "occasions": [
+        "Money & treats",
+        "Birthday"
+      ],
+      "size": "Treats + your cash amount"
+    },
+    {
+      "id": "gentlemans-gift",
+      "name": "Gentleman’s Gift",
+      "price": 5000,
+      "description": "A gift bouquet for him: a T-shirt, socks and accessories arranged with baby’s breath. Tell us his size.",
+      "occasions": [
+        "For him",
+        "Birthday"
+      ],
+      "size": "Clothing gift bouquet"
+    },
+    {
+      "id": "girlfriends-day-halo",
+      "name": "Girlfriend’s Day Halo",
+      "price": 5000,
+      "description": "Red roses in a full ring of baby’s breath with a satin ribbon carrying your message.",
+      "occasions": [
+        "Love"
+      ],
+      "size": "About 100 roses"
+    },
+    {
+      "id": "pink-proposal",
+      "name": "Pink Proposal",
+      "price": 5000,
+      "description": "A dome of pink roses in patterned wrap, with a ribbon that asks the big question. Your words, your way.",
+      "occasions": [
+        "Love"
+      ],
+      "size": "About 100 roses"
+    },
+    {
+      "id": "white-elegance",
+      "name": "White Elegance",
+      "price": 5000,
+      "description": "Pure white roses in soft blue and white wrap. Calm, classic and very elegant.",
+      "occasions": [
+        "Love",
+        "Just because"
+      ],
+      "size": "About 100 roses"
+    },
+    {
+      "id": "ferrero-sunset",
+      "name": "Ferrero Sunset",
+      "price": 4500,
+      "description": "Orange, red, yellow and cream roses, delivered with a box of Ferrero Rocher.",
+      "occasions": [
+        "Birthday",
+        "Love"
+      ],
+      "size": "About 50 roses + Ferrero Rocher"
+    },
+    {
+      "id": "rose-basket",
+      "name": "Rose Basket",
+      "price": 4000,
+      "description": "Red roses, spray roses and baby’s breath arranged in a woven basket with a big red bow.",
+      "occasions": [
+        "Love",
+        "Birthday",
+        "Get well"
+      ],
+      "size": "Basket arrangement"
+    },
+    {
+      "id": "wildflower-market",
+      "name": "Wildflower Market",
+      "price": 4500,
+      "description": "A big, generous mix of sunflowers, gerberas, hydrangea and garden flowers in kraft wrap.",
+      "occasions": [
+        "Birthday",
+        "Just because",
+        "Get well"
+      ],
+      "size": "About 60 stems"
+    },
+    {
+      "id": "ruby-halo",
+      "name": "Ruby Halo",
+      "price": 2500,
+      "description": "Red roses inside a cloud of baby’s breath, in layered white wrap.",
+      "occasions": [
+        "Love",
+        "Just because"
+      ],
+      "size": "About 25 roses"
+    },
+    {
+      "id": "butterfly-garden",
+      "name": "Butterfly Garden",
+      "price": 3000,
+      "description": "White and purple chrysanthemums with lilies and a gold butterfly, in white wrap.",
+      "occasions": [
+        "Birthday",
+        "Get well",
+        "Just because"
+      ],
+      "size": "About 30 stems"
+    },
+    {
+      "id": "pink-lily-breeze",
+      "name": "Pink Lily Breeze",
+      "price": 3000,
+      "description": "Pink chrysanthemums, lilies and eucalyptus in blush wrap. Fresh and gentle.",
+      "occasions": [
+        "Get well",
+        "Birthday",
+        "Just because"
+      ],
+      "size": "About 30 stems"
+    },
+    {
+      "id": "sunshine-lilies",
+      "name": "Sunshine Lilies",
+      "price": 3000,
+      "description": "Yellow, pink and white chrysanthemums with lilies. Pure sunshine.",
+      "occasions": [
+        "Get well",
+        "Birthday",
+        "Just because"
+      ],
+      "size": "About 30 stems"
+    },
+    {
+      "id": "vintage-garden",
+      "name": "Vintage Garden",
+      "price": 2500,
+      "description": "Deep red and white carnations with golden solidago, wrapped in vintage newspaper print.",
+      "occasions": [
+        "Just because",
+        "Birthday"
+      ],
+      "size": "About 25 stems"
+    },
+    {
+      "id": "graduation-cash",
+      "name": "Graduation Cash & Treats",
+      "price": 3500,
+      "description": "A fan of banknotes, chocolates and pink baby’s breath, with a graduate topper. Tell us the cash amount.",
+      "occasions": [
+        "Graduation",
+        "Money & treats"
+      ],
+      "size": "Treats + your cash amount"
+    },
+    {
+      "id": "graduation-snacks",
+      "name": "Graduation Snack Bouquet",
+      "price": 3500,
+      "description": "Oreos, chocolates and sweets in leopard-print wrap with a congratulations card.",
+      "occasions": [
+        "Graduation",
+        "Money & treats"
+      ],
+      "size": "Chocolates and sweets"
+    },
+    {
+      "id": "blue-cash-crisps",
+      "name": "Blue Cash & Crisps",
+      "price": 3000,
+      "description": "Banknotes, crisps and chocolates with blue baby’s breath in sky-blue wrap. Tell us the cash amount.",
+      "occasions": [
+        "Money & treats",
+        "For him",
+        "Birthday"
+      ],
+      "size": "Treats + your cash amount"
+    },
+    {
+      "id": "little-blue-treats",
+      "name": "Little Blue Treats",
+      "price": 2500,
+      "description": "A smaller cash and treats bouquet: banknotes, chocolates and crisps in blue wrap.",
+      "occasions": [
+        "Money & treats",
+        "For him"
+      ],
+      "size": "Treats + your cash amount"
+    },
+    {
+      "id": "blue-sweet-treats",
+      "name": "Blue Sweet Treats",
+      "price": 3000,
+      "description": "Oreos, Kit Kats and chocolates with blue baby’s breath in pale blue wrap.",
+      "occasions": [
+        "Money & treats",
+        "Birthday"
+      ],
+      "size": "Chocolates and sweets"
+    },
+    {
+      "id": "pink-treats",
+      "name": "Pink Treats",
+      "price": 3000,
+      "description": "Chocolates and crisps with pink baby’s breath in pink wrap and a big pink bow.",
+      "occasions": [
+        "Money & treats",
+        "Birthday"
+      ],
+      "size": "Chocolates and snacks"
+    },
+    {
+      "id": "crunch-bouquet",
+      "name": "Crunch Bouquet",
+      "price": 2500,
+      "description": "Crisps, chocolates and a couple of red roses with a bold red bow. For the snack lover.",
+      "occasions": [
+        "Money & treats",
+        "For him",
+        "Birthday"
+      ],
+      "size": "Snacks + 2 roses"
+    }
+  ]
+}

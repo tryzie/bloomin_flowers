@@ -19,20 +19,45 @@ npm run dev
 ## Edit your content
 | What | File |
 |------|------|
+| **Bouquets**: name, price, description, occasions, photo, bestseller badge | `src/data/bouquets.json` |
+| **Other prices**: add-ons, delivery areas and fees, subscriptions | `src/data/prices.json` |
 | Shop name, WhatsApp number, phones, address, hours, Instagram | `src/config.ts` |
-| **All prices** (bouquets, add-ons, delivery fees, subscriptions) | `src/data/prices.json` |
-| Bouquet descriptions, photos, occasions | `src/data/products.ts` |
-| FAQ / subscription plans | `src/components/Faq.tsx`, `src/components/Subscriptions.tsx` |
+| FAQ / subscription descriptions | `src/components/Faq.tsx`, `src/components/Subscriptions.tsx` |
 | Brand colours and fonts | top of `src/styles.css` |
 
-**Photos:** product photos live in `public/images/` as square JPEGs about 900px wide (keeps the site fast on mobile data). To add a bouquet, crop the photo square, save it there, and add an entry with `image: './images/<name>.jpg'` in `src/data/products.ts`.
+All edits can be made on GitHub in the browser: open the file, click the pencil icon, edit, then **Commit changes**. The site updates in about a minute.
 
-## Changing prices (no coding needed)
-1. On GitHub, open `src/data/prices.json` and click the pencil icon (Edit).
-2. Change the numbers: whole KSh, no commas (`3500`, not `3,500`). Delivery fee `0` shows as Free.
-3. Click **Commit changes**. The site updates in about a minute.
+### Add a bouquet
+1. Open the `photos` folder on GitHub → **Add file → Upload files** → drop in the phone photo → **Commit changes**.
+2. Open `src/data/bouquets.json`, copy any bouquet block, paste it after the last one and change it:
+   ```json
+   {
+     "id": "sunflower-joy",
+     "name": "Sunflower Joy",
+     "price": 3000,
+     "description": "Sunflowers and white roses in kraft wrap.",
+     "occasions": ["Birthday", "Just because"],
+     "size": "About 20 stems",
+     "photo": "IMG_3001.jpeg"
+   }
+   ```
+   - `id`: new, lowercase, words joined by dashes.
+   - `photo`: the exact file name you uploaded.
+   - `occasions`: names from the `occasions` list at the top of the file (add a new name there to create a new filter tab).
+   - Optional: `"bestseller": true` shows the badge.
+   - Every block except the last needs a comma after its `}`.
+3. **Commit changes.** The photo is cropped square and compressed automatically.
 
-If you make a mistake (a missing comma, a price in quotes), the update is not published and the site keeps its previous prices. The **Actions** tab shows a red ✖; open it to see a message saying what to fix.
+If the automatic crop cuts the flowers, add `"focus": "top"` (or `bottom`, `left`, `right`, `center`). If the bouquet is small in the photo, add `"zoom": 1.5` (up to 4) to zoom in; combine with `focus` to zoom towards one side.
+
+### Remove a bouquet
+Delete its whole block from `bouquets.json` (and the comma before it if it was the last one).
+
+### Add an add-on or delivery area
+Copy a block in `src/data/prices.json` under `addOns` or `deliveryAreas` and change it. Delivery fee `0` shows as Free.
+
+### If something goes wrong
+A mistake (missing comma, price in quotes, unknown occasion, photo name typo) stops the update from publishing, and the site keeps its previous version. The **Actions** tab shows a red ✖; open it and the log lists exactly what to fix.
 
 ## Deploy to GitHub Pages
 1. Create a repo on GitHub and push this folder to the `main` branch.

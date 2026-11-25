@@ -465,6 +465,29 @@
         "Birthday"
       ],
       "size": "Snacks + 2 roses"
+    },
+    {
+      "id": "midnight-meadow",
+      "name": "Midnight Meadow",
+      "price": 2000,
+      "description": "White, pink and golden chrysanthemums with alstroemeria, in black plaid wrap. Bright flowers, bold wrap.",
+      "occasions": [
+        "Birthday",
+        "Just because",
+        "For him"
+      ],
+      "size": "About 30 stems"
+    },
+    {
+      "id": "lilac-lily-romance",
+      "name": "Lilac Lily Romance",
+      "price": 2500,
+      "description": "Purple and white roses with lily buds and baby’s breath, in pink and gold marble wrap with a white bow.",
+      "occasions": [
+        "Love",
+        "Birthday"
+      ],
+      "size": "About 30 stems"
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { track } from '../analytics';
 import { SHOP } from '../config';
 import Petals from './Petals';
 
@@ -15,7 +16,7 @@ export default function Hero() {
           </p>
           <div className="hero-actions">
             <a href="#shop" className="btn btn-primary">Shop bouquets</a>
-            <a href={`https://wa.me/${SHOP.whatsapp}`} className="btn btn-ghost" target="_blank" rel="noreferrer">
+            <a href={`https://wa.me/${SHOP.whatsapp}`} className="btn btn-ghost" target="_blank" rel="noreferrer" onClick={() => track('chat-whatsapp', 'hero')}>
               Order on WhatsApp
             </a>
           </div>

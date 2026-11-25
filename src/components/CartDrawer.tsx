@@ -1,3 +1,4 @@
+import { track } from '../analytics';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { SHOP } from '../config';
 import { ADD_ONS, PRODUCTS } from '../data/products';
@@ -80,6 +81,7 @@ export default function CartDrawer({ open, onClose, lines, add, setQty, clear }:
     if (!recipient.trim() || !/^(\+?254|0)[17]\d{8}$/.test(recipientPhone.replace(/\s/g, '')))
       return setError('Enter the recipient’s name and a Kenyan phone number, like 0712 345 678.');
     setError('');
+    track('order-sent-whatsapp', zone);
     window.open(`https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(orderText)}`, '_blank', 'noopener');
   };
 
@@ -117,7 +119,7 @@ export default function CartDrawer({ open, onClose, lines, add, setQty, clear }:
               <p className="field-label">Add something extra</p>
               <div className="chips">
                 {ADD_ONS.map((a) => (
-                  <button key={a.id} className="chip" onClick={() => add(a.id)}>
+                  <button key={a.id} className="chip" onClick={() => { add(a.id); track('add-extra', a.id); }}>
                     + {a.name} · {ksh(a.price)}
                   </button>
                 ))}

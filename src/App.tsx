@@ -1,3 +1,4 @@
+import { track } from './analytics';
 import { useCallback, useState } from 'react';
 import CartDrawer from './components/CartDrawer';
 import Delivery from './components/Delivery';
@@ -18,6 +19,7 @@ export default function App() {
 
   const addFromShop = (id: string) => {
     cart.add(id);
+    track('add-to-basket', id);
     setToast('Added to basket');
     window.setTimeout(() => setToast(''), 1800);
   };

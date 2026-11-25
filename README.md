@@ -59,6 +59,28 @@ Copy a block in `src/data/prices.json` under `addOns` or `deliveryAreas` and cha
 ### If something goes wrong
 A mistake (missing comma, price in quotes, unknown occasion, photo name typo) stops the update from publishing, and the site keeps its previous version. The **Actions** tab shows a red ✖; open it and the log lists exactly what to fix.
 
+## Visitor statistics
+The site can count visits with [GoatCounter](https://www.goatcounter.com): free, no cookies, no personal data, so no cookie banner is needed.
+1. Sign up at goatcounter.com and choose a site code (e.g. `bloominflowers`).
+2. Put that code in `src/config.ts` → `goatcounter: 'bloominflowers'` and commit.
+
+Besides page views, the dashboard shows these actions:
+
+| Event | Meaning |
+|-------|---------|
+| `add-to-basket/<bouquet>` | bouquet added to basket |
+| `add-extra/<add-on>` | extra added (cake, teddy …) |
+| `order-sent-whatsapp/<area>` | order sent on WhatsApp, with delivery area |
+| `ask-whatsapp/<bouquet>` | "Ask about this on WhatsApp" clicked |
+| `chat-whatsapp/<where>` | WhatsApp chat button (hero, floating button, footer) |
+| `call/footer` | phone number tapped |
+| `delivery-check/<area>` | delivery fee looked up |
+| `subscription/<plan>` | subscription button |
+| `instagram` | Instagram link |
+
+## Search engines
+The build adds a page title and description, link-preview tags (`public/social.jpg` is the image WhatsApp/Instagram show), business details for Google (address, hours, phone, bouquets and prices), and `sitemap.xml`. The site address and opening hours for Google are in `src/config.ts` (`siteUrl`, `openingHours`).
+
 ## Deploy to GitHub Pages
 1. Create a repo on GitHub and push this folder to the `main` branch.
 2. In the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.

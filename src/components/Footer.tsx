@@ -1,3 +1,4 @@
+import { track } from '../analytics';
 import { SHOP } from '../config';
 
 const tel = (p: string) => `tel:${p.replace(/\s/g, '')}`;
@@ -19,14 +20,14 @@ export default function Footer() {
         <div>
           <h3>Call or WhatsApp</h3>
           {SHOP.phones.map((p) => (
-            <p key={p}><a href={tel(p)}>{p}</a></p>
+            <p key={p}><a href={tel(p)} onClick={() => track('call', 'footer')}>{p}</a></p>
           ))}
-          <p><a href={`https://wa.me/${SHOP.whatsapp}`} target="_blank" rel="noreferrer">Chat on WhatsApp</a></p>
+          <p><a href={`https://wa.me/${SHOP.whatsapp}`} target="_blank" rel="noreferrer" onClick={() => track('chat-whatsapp', 'footer')}>Chat on WhatsApp</a></p>
         </div>
         <div>
           <h3>Follow us</h3>
           <p>
-            <a href={`https://instagram.com/${SHOP.instagramHandle}`} target="_blank" rel="noreferrer">
+            <a href={`https://instagram.com/${SHOP.instagramHandle}`} target="_blank" rel="noreferrer" onClick={() => track('instagram')}>
               Instagram @{SHOP.instagramHandle}
             </a>
           </p>

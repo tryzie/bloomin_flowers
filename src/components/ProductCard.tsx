@@ -1,3 +1,4 @@
+import { track } from '../analytics';
 import type { Product } from '../data/products';
 import { ksh } from '../data/zones';
 import { SHOP } from '../config';
@@ -21,6 +22,7 @@ export default function ProductCard({ product, onAdd, inCart }: Props) {
         <p className="product-meta">{product.size}</p>
         <a
           className="ask"
+          onClick={() => track('ask-whatsapp', product.id)}
           href={`https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(`Hi ${SHOP.name}, I'm interested in the ${product.name} (${ksh(product.price)}). Is it available?`)}`}
           target="_blank"
           rel="noreferrer"

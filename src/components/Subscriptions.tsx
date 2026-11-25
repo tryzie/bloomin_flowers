@@ -1,3 +1,4 @@
+import { track } from '../analytics';
 import { SHOP } from '../config';
 import { ksh } from '../data/zones';
 import prices from '../data/prices.json';
@@ -29,7 +30,7 @@ export default function Subscriptions() {
               {ksh(p.price)} <span>/ {p.every}</span>
             </p>
             <p>{p.detail}</p>
-            <a className="btn btn-ghost" href={ask(p.name)} target="_blank" rel="noreferrer">
+            <a className="btn btn-ghost" href={ask(p.name)} target="_blank" rel="noreferrer" onClick={() => track('subscription', p.name)}>
               Start {p.name.toLowerCase()} plan
             </a>
           </div>

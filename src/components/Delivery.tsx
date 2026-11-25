@@ -1,3 +1,4 @@
+import { track } from '../analytics';
 import { useState } from 'react';
 import { SHOP } from '../config';
 import { ZONES, ksh } from '../data/zones';
@@ -17,7 +18,7 @@ export default function Delivery() {
           </p>
           <label className="zone-pick">
             Delivery area
-            <select value={zone} onChange={(e) => setZone(e.target.value)}>
+            <select value={zone} onChange={(e) => { setZone(e.target.value); track('delivery-check', e.target.value); }}>
               <option value="">Choose an area…</option>
               {ZONES.map((x) => (
                 <option key={x.name} value={x.name}>{x.name}</option>

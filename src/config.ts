@@ -9,7 +9,7 @@ export const SHOP = {
   mapUrl: 'https://maps.google.com/?q=Cianda+House+Koinange+Street+Nairobi',
   hours: 'Open 8am – 5pm',
   sameDayCutoff: '2pm',
-  instagramHandle: 'bloomin_flowers',
+  instagramHandle: 'bloomin_flowers_',
 
   // ---- Search engines and link previews ----
   // Public address of the website. Change it if you move to your own domain.
@@ -20,5 +20,5 @@ export const SHOP = {
   // ---- Visitor statistics (GoatCounter, no cookies) ----
   // Sign up free at https://www.goatcounter.com and put your site code here,
   // e.g. 'bloominflowers' for bloominflowers.goatcounter.com. Empty = off.
-  goatcounter: '',
+  goatcounter: 'bloominflowers',
 };

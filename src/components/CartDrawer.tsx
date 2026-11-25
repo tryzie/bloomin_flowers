@@ -2,7 +2,7 @@ import { track } from '../analytics';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { SHOP } from '../config';
 import { ADD_ONS, PRODUCTS } from '../data/products';
-import { ZONES, ksh } from '../data/zones';
+import { OTHER_AREA, ZONES, ksh } from '../data/zones';
 import type { CartLine } from '../hooks/useCart';
 
 interface Props {
@@ -25,6 +25,7 @@ function localDateISO(offset = 0) {
 
 export default function CartDrawer({ open, onClose, lines, add, setQty, clear }: Props) {
   const [zone, setZone] = useState('');
+  const [otherArea, setOtherArea] = useState('');
   const [date, setDate] = useState(localDateISO(0));
   const [recipient, setRecipient] = useState('');
   const [recipientPhone, setRecipientPhone] = useState('');
@@ -52,8 +53,10 @@ export default function CartDrawer({ open, onClose, lines, add, setQty, clear }:
 
   const subtotal = rows.reduce((s, r) => s + r.item.price * r.qty, 0);
   const z = ZONES.find((x) => x.name === zone);
-  const fee = z?.fee ?? 0;
+  const isOther = zone === OTHER_AREA;
+  const fee = z?.fee ?? 0; // "Other area" has no fixed fee; the shop quotes it
   const total = subtotal + fee;
+  const feeLabel = isOther ? 'To be confirmed' : zone ? (fee === 0 ? 'Free' : ksh(fee)) : '—';
   const hasFlowers = rows.some((r) => PRODUCTS.some((p) => p.id === r.id));
 
   const orderText = useMemo(() => {
@@ -62,26 +65,29 @@ export default function CartDrawer({ open, onClose, lines, add, setQty, clear }:
       `Hi ${SHOP.name}, I'd like to order:`,
       items,
       '',
-      `Delivery: ${zone} (${fee === 0 ? 'free' : ksh(fee)}) on ${date}`,
+      isOther
+        ? `Delivery: ${otherArea.trim()} (other area, please quote the delivery fee) on ${date}`
+        : `Delivery: ${zone} (${fee === 0 ? 'free' : ksh(fee)}) on ${date}`,
       `Recipient: ${recipient} ${recipientPhone}`,
       landmark ? `Location / landmark: ${landmark}` : null,
       message ? `Card message: "${message}"` : null,
       `From: ${sender || 'Anonymous'}`,
       '',
-      `Total: ${ksh(total)}`,
+      isOther ? `Total: ${ksh(total)} + delivery fee` : `Total: ${ksh(total)}`,
       'Please confirm availability and payment details.',
     ]
       .filter((x) => x !== null)
       .join('\n');
-  }, [rows, zone, fee, date, recipient, recipientPhone, landmark, message, sender, total]);
+  }, [rows, zone, isOther, otherArea, fee, date, recipient, recipientPhone, landmark, message, sender, total]);
 
   const sendOrder = () => {
     if (!hasFlowers) return setError('Add at least one bouquet to your basket.');
     if (!zone) return setError('Choose a delivery area.');
+    if (isOther && !otherArea.trim()) return setError('Type the delivery area, for example Syokimau or Kikuyu.');
     if (!recipient.trim() || !/^(\+?254|0)[17]\d{8}$/.test(recipientPhone.replace(/\s/g, '')))
       return setError('Enter the recipient’s name and a Kenyan phone number, like 0712 345 678.');
     setError('');
-    track('order-sent-whatsapp', zone);
+    track('order-sent-whatsapp', isOther ? `other:${otherArea.trim().toLowerCase()}` : zone);
     window.open(`https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(orderText)}`, '_blank', 'noopener');
   };
 
@@ -136,8 +142,15 @@ export default function CartDrawer({ open, onClose, lines, add, setQty, clear }:
                       {x.name} — {x.fee === 0 ? 'Free' : ksh(x.fee)}
                     </option>
                   ))}
+                  <option value={OTHER_AREA}>Other area — fee confirmed on WhatsApp</option>
                 </select>
               </label>
+              {isOther && (
+                <label>
+                  Which area?
+                  <input value={otherArea} onChange={(e) => setOtherArea(e.target.value)} placeholder="e.g. Syokimau" autoFocus />
+                </label>
+              )}
               <label>
                 Delivery date
                 <input type="date" min={localDateISO(0)} value={date} onChange={(e) => setDate(e.target.value)} />
@@ -166,8 +179,8 @@ export default function CartDrawer({ open, onClose, lines, add, setQty, clear }:
 
             <dl className="totals">
               <div><dt>Subtotal</dt><dd>{ksh(subtotal)}</dd></div>
-              <div><dt>Delivery</dt><dd>{zone ? (fee === 0 ? 'Free' : ksh(fee)) : '—'}</dd></div>
-              <div className="grand"><dt>Total</dt><dd>{ksh(total)}</dd></div>
+              <div><dt>Delivery</dt><dd>{feeLabel}</dd></div>
+              <div className="grand"><dt>Total</dt><dd>{isOther ? `${ksh(total)} + delivery` : ksh(total)}</dd></div>
             </dl>
 
             {error && <p className="error" role="alert">{error}</p>}

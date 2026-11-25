@@ -13,7 +13,7 @@ export const SHOP = {
 
   // ---- Search engines and link previews ----
   // Public address of the website. Change it if you move to your own domain.
-  siteUrl: 'https://tryzie.github.io/bloomin_flowers/',
+  siteUrl: 'https://bloominflowers.co.ke/',
   // Opening hours for Google, in schema.org format (Mo Tu We Th Fr Sa Su, 24h clock).
   openingHours: 'Mo-Su 08:00-17:00',
 

@@ -1,7 +1,7 @@
 import { track } from '../analytics';
 import { useState } from 'react';
 import { SHOP } from '../config';
-import { ZONES, ksh } from '../data/zones';
+import { OTHER_AREA, ZONES, ksh } from '../data/zones';
 
 export default function Delivery() {
   const [zone, setZone] = useState('');
@@ -23,10 +23,27 @@ export default function Delivery() {
               {ZONES.map((x) => (
                 <option key={x.name} value={x.name}>{x.name}</option>
               ))}
+              <option value={OTHER_AREA}>Other area</option>
             </select>
           </label>
           <div className="zone-result" aria-live="polite">
-            {z ? (
+            {zone === OTHER_AREA ? (
+              <>
+                <p className="zone-fee">We’ll quote you</p>
+                <p>
+                  We deliver beyond this list too.{' '}
+                  <a
+                    href={`https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(`Hi ${SHOP.name}, do you deliver to my area? I'm in: `)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => track('ask-delivery-quote')}
+                  >
+                    Ask for a delivery quote on WhatsApp
+                  </a>
+                  .
+                </p>
+              </>
+            ) : z ? (
               <>
                 <p className="zone-fee">{z.fee === 0 ? 'Free delivery' : ksh(z.fee)}</p>
                 <p>

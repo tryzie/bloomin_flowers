@@ -81,6 +81,10 @@ Besides page views, the dashboard shows these actions:
 ## Search engines
 The build adds a page title and description, link-preview tags (`public/social.jpg` is the image WhatsApp/Instagram show), business details for Google (address, hours, phone, bouquets and prices), and `sitemap.xml`. The site address and opening hours for Google are in `src/config.ts` (`siteUrl`, `openingHours`).
 
+## Custom domain
+The site is served at https://bloominflowers.co.ke (`public/CNAME`, `siteUrl` in `src/config.ts`).
+DNS at the registrar: four `A` records for `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153, and a `CNAME` for `www` → `tryzie.github.io`. Then in the repo: Settings → Pages → Custom domain → `bloominflowers.co.ke`, and tick Enforce HTTPS.
+
 ## Deploy to GitHub Pages
 1. Create a repo on GitHub and push this folder to the `main` branch.
 2. In the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.

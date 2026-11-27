@@ -488,6 +488,18 @@
         "Birthday"
       ],
       "size": "About 30 stems"
+    },
+    {
+      "id": "pink-lilac-sparkle",
+      "name": "Pink & Lilac Sparkle",
+      "price": 1500,
+      "description": "Pink and lilac roses with a touch of sparkle, wrapped in soft white paper. Sweet, bright and great value.",
+      "occasions": [
+        "Love",
+        "Birthday",
+        "Just because"
+      ],
+      "size": "About 35 roses"
     }
   ]
 }
